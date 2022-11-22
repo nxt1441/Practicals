@@ -1,0 +1,10 @@
+import networkx as nx
+g = nx.Graph()
+h = nx.Graph()
+g.add_nodes_from(range(1,4))
+h.add_nodes_from(range(4,8))
+g.add_nodes_from(g)
+g.add_edges_from([(1,2),(2,3),(3,1)])
+h.add_edges_from([(4,5),(5,6),(6,7),(4,7),(1,4),(3,5)])
+g.add_edges_from(h.edges())
+nx.draw_networkx(g)
